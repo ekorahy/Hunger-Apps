@@ -1,0 +1,152 @@
+@media screen and (min-width: 374px) {
+  .restaurant .restaurant__overview .review-container .customer-reviews__container .customer-reviews__desc .customer-reviews__desc__container {
+    max-width: 200px;
+  }
+}
+
+@media screen and (min-width: 424px) {
+  .restaurant .restaurant__overview .review-container .customer-reviews__container .customer-reviews__desc .customer-reviews__desc__container {
+    max-width: 250px;
+  }
+}
+
+@media screen and (min-width: 550px) {
+  .restaurant .restaurant__overview .review-container .customer-reviews__container .customer-reviews__desc .customer-reviews__desc__container {
+    max-width: 400px;
+  }
+}
+
+@media screen and (min-width: 650px) {
+  header app-bar .header__menu {
+    display: none;
+  }
+  header app-bar .nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: static;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    width: 100%;
+    min-height: 0;
+    margin: auto;
+  }
+  header app-bar .nav .nav__list {
+    margin: auto;
+  }
+  header app-bar .nav .nav__list .nav__item {
+    display: inline-block;
+    margin-right: 8px;
+    padding: 0px;
+    margin-top: 0px;
+  }
+  header app-bar .nav .nav__list {
+    margin-right: 4px;
+    text-align: left;
+  }
+  header app-bar .nav a {
+    padding: 16px;
+  }
+  .hero {
+    background-image: url("/images/hero-image-large.jpg");
+  }
+  main {
+    padding: 32px;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+  main .content {
+    margin: 0 auto;
+    min-height: 100%;
+  }
+  main .content .content__heading {
+    font-weight: normal;
+  }
+  main .content .restaurants {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+  main .content .restaurants .restaurant-item .restaurant-item__header img {
+    height: 200px;
+  }
+  .restaurant {
+    -ms-grid-columns: auto 1fr;
+        grid-template-columns: auto 1fr;
+  }
+  .restaurant .restaurant__title {
+    -ms-grid-column: 1;
+        grid-column-start: 1;
+    grid-column-end: 3;
+  }
+  .restaurant .restaurant__overview {
+    -ms-grid-column: 1;
+        grid-column-start: 1;
+    grid-column-end: 3;
+  }
+  .restaurant .restaurant__overview .review-container .customer-reviews__container .customer-reviews__desc .customer-reviews__desc__container {
+    max-width: 500px;
+  }
+  .testimonial .testimonial__container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    grid-column-gap: 10px;
+    grid-row-gap: 16px;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .restaurant .restaurant__overview .review-container .customer-reviews__container .customer-reviews__desc .customer-reviews__desc__container {
+    max-width: 600px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  main {
+    padding: 32px;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+  main .content {
+    margin: 0 auto;
+    min-height: 100%;
+  }
+  main .content .content__heading {
+    font-weight: normal;
+  }
+  main .content .restaurants {
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+    margin-right: 0;
+    margin-left: 0;
+  }
+  .restaurant .restaurant__overview .review-container .customer-reviews__container .customer-reviews__desc .customer-reviews__desc__container {
+    max-width: 700px;
+  }
+  .testimonial .testimonial__container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 10px;
+    grid-row-gap: 16px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .hero {
+    min-width: 1000px;
+  }
+  main {
+    max-width: 1200px;
+  }
+  .testimonial .testimonial__container {
+    max-width: 1200px;
+  }
+}
+/*# sourceMappingURL=responsive.css.map */

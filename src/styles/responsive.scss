@@ -1,0 +1,264 @@
+$small1: 374px;
+$small2: 424px;
+$small3: 550px;
+$medium1: 650px;
+$medium2: 750px;
+$large: 1000px;
+$xLarge: 1200px;
+
+@media screen and (min-width: $small1) {
+  .restaurant {
+
+    .restaurant__overview {
+
+      .review-container {
+
+        .customer-reviews__container {
+
+          .customer-reviews__desc {
+
+            .customer-reviews__desc__container {
+              max-width: 200px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $small2) {
+  .restaurant {
+
+    .restaurant__overview {
+
+      .review-container {
+
+        .customer-reviews__container {
+
+          .customer-reviews__desc {
+
+            .customer-reviews__desc__container {
+              max-width: 250px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $small3) {
+  .restaurant {
+
+    .restaurant__overview {
+
+      .review-container {
+
+        .customer-reviews__container {
+
+          .customer-reviews__desc {
+
+            .customer-reviews__desc__container {
+              max-width: 400px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $medium1) {
+  header app-bar {
+    .header__menu {
+      display: none;
+    }
+
+    .nav {
+      display: flex;
+      position: static;
+      transform: translateX(0);
+      box-shadow: none;
+      width: 100%;
+      min-height: 0;
+      margin: auto;
+
+      .nav__list {
+        margin: auto;
+
+        .nav__item {
+          display: inline-block;
+          margin-right: 8px;
+          padding: 0px;
+          margin-top: 0px;
+        }
+      }
+
+      .nav__list {
+        margin-right: 4px;
+        text-align: left;
+      }
+
+      a {
+        padding: 16px;
+      }
+    }
+  }
+
+  .hero {
+    background-image: url('/images/hero-image-large.jpg');
+  }
+
+  main {
+    padding: 32px;
+    flex: 1;
+  
+    .content {
+      margin: 0 auto;
+      min-height: 100%;
+  
+      .content__heading {
+        font-weight: normal;
+      }
+  
+      .restaurants {
+        grid-template-columns: 1fr 1fr;
+
+        .restaurant-item {
+  
+          .restaurant-item__header {
+            img {
+              height: 200px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .restaurant {
+    grid-template-columns: auto 1fr;
+
+    .restaurant__title {
+      grid-column-start: 1;
+        grid-column-end: 3;
+    }
+
+    .restaurant__overview {
+      grid-column-start: 1;
+      grid-column-end: 3;
+
+      .review-container {
+
+        .customer-reviews__container {
+
+          .customer-reviews__desc {
+
+            .customer-reviews__desc__container {
+              max-width: 500px;
+            }
+          }
+        }
+      }
+    }
+
+  }
+  
+  .testimonial {
+    .testimonial__container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-column-gap: 10px;
+      grid-row-gap: 16px;
+    }
+  }
+}
+
+@media screen and (min-width: $medium2) {
+  .restaurant {
+
+    .restaurant__overview {
+
+      .review-container {
+
+        .customer-reviews__container {
+
+          .customer-reviews__desc {
+
+            .customer-reviews__desc__container {
+              max-width: 600px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+  
+@media screen and (min-width: $large) {
+  main {
+    padding: 32px;
+    flex: 1;
+  
+    .content {
+      margin: 0 auto;
+      min-height: 100%;
+  
+      .content__heading {
+        font-weight: normal;
+      }
+  
+      .restaurants {
+        grid-template-columns: 1fr 1fr 1fr;
+        margin-right: 0;
+        margin-left: 0;
+      }
+    }
+  }
+
+  .restaurant {
+
+    .restaurant__overview {
+
+      .review-container {
+
+        .customer-reviews__container {
+
+          .customer-reviews__desc {
+
+            .customer-reviews__desc__container {
+              max-width: 700px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .testimonial {
+    .testimonial__container {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-column-gap: 10px;
+      grid-row-gap: 16px;
+    }
+  }
+}
+  
+
+@media screen and (min-width: $xLarge) {
+  .hero {
+    min-width: 1000px;
+  }
+  
+  main {
+    max-width: 1200px;
+  } 
+
+  .testimonial {
+    .testimonial__container {
+      max-width: 1200px;
+    }
+  }
+}

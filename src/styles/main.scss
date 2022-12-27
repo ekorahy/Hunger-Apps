@@ -1,0 +1,493 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
+
+$color : (
+  'primary': #F16521,
+  'secondary': #fff,
+  'text': #424242,
+  'default': #000,
+);
+
+$box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  color: map-get($color, 'text');
+}
+
+.skip-link {
+  position: absolute;
+  top: -52px;
+  left: 0;
+  background-color: map-get($color, 'primary');
+  color: map-get($color, 'secondary');
+  padding: 16px;
+  z-index: 100;
+
+  &:focus {
+    top: 0;
+  }
+}
+
+header app-bar {
+  position: fixed;
+  width: 100%;
+  background-color: map-get($color, 'secondary');;
+  top: 0;
+  display: flex;
+  z-index: 99;
+  border-bottom: 0.2px solid rgba(0, 0, 0, 0.2);
+
+  img {
+    padding: 12px 16px;
+    height: 59px;
+  }
+
+  .header__menu {
+    padding: 8px 16px;
+    font-weight: bold;
+    color: map-get($color, 'text');
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    align-content: right;
+    font-size: 32px;
+    text-align: right;
+    position: absolute;
+    right: 0;
+    font-size: 32px;
+    display: block;
+    height: 59px;
+  }
+
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: map-get($color, 'secondary');
+    min-height: 100vh;
+    width: 200px;
+    box-shadow: $box-shadow;
+    transform: translateX(-210px);
+    transition: transform 0.3s ease-out;
+
+    a {
+      text-decoration: none;
+      color: map-get($color, 'text');
+      padding: 16px 32px;
+    }
+  }
+
+  .open {
+    transform: translateX(0);
+  }
+
+  .nav__list {
+    list-style: none;
+    display: block;
+    text-align: center;
+
+    .nav__item {
+      color: map-get($color, 'text');
+      font-weight: bold;
+      margin-top: 36px;
+
+      &:hover::after {
+        content: '';
+        display: block;
+        border-bottom: 3px solid map-get($color, 'primary');
+        margin: auto;
+        padding-bottom: 5px;
+        margin-bottom: -8px;
+        width: 50%;
+      }
+    }
+  }
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  min-height: 380px;
+  width: 100%;
+  background-image: url('/images/hero-image-small.jpg');
+  text-align: center;
+  background-position: center;
+  background-color: map-get($color, 'default');
+  position: relative;
+  top: 59px;
+
+  .hero__inner {
+    margin: 0 auto;
+    max-width: 800px;
+    color: map-get($color, 'secondary');
+
+    .hero__title {
+      font-weight: 500;
+      font-size: 36px;
+    }
+
+    .hero__tagline {
+      margin-top: 16px;
+      font-size: 18px;
+      font-weight: 300;
+
+      .tagline__color {
+        color: map-get($color, 'primary');
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+main {
+  padding: 32px;
+  flex: 1;
+  margin: 0 auto;
+  position: relative;
+  top: 59px;
+
+  .content {
+    margin: 0 auto;
+    min-height: 100%;
+
+    .content__heading {
+      font-weight: normal;
+      color: map-get($color, 'primary');
+      text-align: center;
+      font-size: 32px;
+    }
+
+    .restaurants {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin: 32px 0;
+      
+      .restaurant-item__not__found {
+        text-align: center;
+        font-size: 18px;
+        font-weight: lighter;
+        display: block;
+        grid-column-start: 1;
+        grid-column-end: 4;
+      }
+
+      .restaurant-item {
+        width: 100%;
+        box-shadow: $box-shadow;
+        border-radius: 8px;
+        overflow: hidden;
+
+        .restaurant-item__header {
+          position: relative;
+
+          .restaurant-item__header__poster {
+            width: 100%;
+          }
+          
+          .restaurant-item__header__city {
+            position: absolute;
+            padding: 8px;
+            left: 0;
+            top: 14px;
+            display: inline-block;
+            background-color: map-get($color, 'default');
+            color: map-get($color, 'primary');
+            .restaurant-item__header__city__name {
+              margin-left: 10px;
+              color: map-get($color, 'secondary');
+            }
+          }
+        }
+
+        .restaurant-item__content {
+          padding: 16px;
+          background-color: #fff;
+
+          .restaurant-item__content__rating {
+            color: goldenrod;
+          }
+
+          .restaurant-item__content__name {
+            padding: 12px 0;
+
+            a {
+              font-size: 18px;
+              padding: 14px 0;
+              transition: 0.3s opacity;
+              text-decoration: none;
+              color: map-get($color, 'primary');
+
+              &:hover {
+                opacity: 0.5;
+              }
+            }
+          }
+
+          p {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 4; 
+            -webkit-box-orient: vertical;
+          }
+        }
+      }
+    }
+  }
+}
+
+.restaurant {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 800px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px 16px;
+
+  .restaurant__title {
+    color: map-get($color, 'primary');
+  }
+
+  .restaurant__poster {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .restaurant__info {
+    h3 {
+      color: map-get($color, 'primary');
+    } 
+
+    h4 {
+      margin: 8px 0;
+    }
+
+    .restaurant__info__categories {
+      margin-left: 22px;
+    }
+  }
+
+  .restaurant__overview {
+    h4 {
+      margin: 8px 0;
+    }
+
+    .restaurant__overview__menu {
+      margin-left: 22px;
+    }
+
+    .review-container {      
+      .review-container__header {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 5px;
+        margin-bottom: 8px;
+
+        .btn-add-review {
+          font-size: 12px;
+        }
+      }
+
+      .customer-reviews__container {
+        display: flex;
+        width: 100%;
+        box-shadow: $box-shadow;
+        border-radius: 8px;
+        padding: 12px;
+        margin-bottom: 8px;
+  
+        .customer-reviews__icon {
+          font-size: 32px;
+          padding: 0 8px;
+        }
+  
+        .customer-reviews__desc {
+          margin-top: 5px;
+  
+          .customer-reviews__desc__name {
+            font-weight: bold;
+            font-size: 12px;
+          }
+  
+          .customer-reviews__desc__date {
+            font-weight: lighter;
+            font-size: 10px;
+          }
+          
+          .customer-reviews__desc__container {
+            max-width: 150px;
+            margin-top: 5px;
+
+            .customer-reviews__desc__review {
+              overflow: auto;
+            display: -webkit-box;
+            -webkit-line-clamp: 4; 
+            -webkit-box-orient: vertical;
+            }
+          }
+        }
+      }
+
+      .add-new-review {
+        margin: 18px 0;
+      }
+
+      .add-review {
+        border-radius: 5px;
+        background-color: whitesmoke;
+        padding: 20px;
+
+        label {
+          font-weight: bold;
+        }
+
+        input[type=text] {
+          height: 50px;
+          width: 100%;
+          padding: 12px 20px;
+          margin: 8px 0;
+          display: inline-block;
+          border: none;
+          border-bottom: 2px solid rgba(241, 101, 33, 0.7);
+          box-sizing: border-box;
+        }
+
+        textarea {
+          height: 100px;
+          width: 100%;
+          padding: 12px 20px;
+          margin: 8px 0;
+          display: inline-block;
+          border: none;
+          border-bottom: 2px solid rgba(241, 101, 33, 0.7);
+          box-sizing: border-box;
+        }
+
+        input[type=submit] {
+          font-size: 18px;
+          height: 50px;
+          width: 100%;
+          background-color: rgba(241, 101, 33, 0.7);
+          color: white;
+          padding: 14px 20px;
+          margin: 8px 0;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+        }
+        
+        input[type=submit]:hover {
+          background-color: rgba(241, 101, 33, 1);
+        }
+      }
+    }
+    
+  }
+}
+
+.favorite {
+  font-size: 18px;
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  background-color: map-get($color, 'primary');
+  color: map-get($color, 'secondary');;
+  border: 0;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.testimonial {
+  background-color: whitesmoke;
+  padding: 32px;
+  position: relative;
+  top: 59px;
+
+  .testimonial__label {
+    text-align: center;
+    padding-top: 16px;
+    font-size: 32px;
+    font-weight: normal;
+    color: map-get($color, 'primary');
+  }
+
+  .testimonial__tagline {
+    text-align: center;
+    font-size: 18px;
+    font-weight: lighter;
+  }
+  
+  .testimonial__container {
+    display: grid;
+    grid-row-gap: 16px;
+    margin: 32px auto auto;
+    text-align: center;
+    margin-bottom: 32px;
+
+    .testimonial-item {
+      box-shadow: $box-shadow;
+      width: 100%;
+      border-radius: 5px;
+      overflow: hidden;
+      background-color: map-get($color, 'secondary');
+      padding: 18px;
+
+      .testimonial-item__thumbnail {
+        width: 150px;
+        border-radius: 50%;
+      }
+
+      .testimonial-item__name {
+        font-weight: 500;
+        font-size: 16px;
+        margin-top: 16px;
+        transition: 0.3s opacity;
+      }
+      
+      .testimonial-item__profession {
+        font-size: 10px;
+        color: map-get($color, 'primary');
+        margin-bottom: 8px;
+      }
+      
+      .testimonial-item__description {
+        margin-top: 16px;
+        font-size: 12px;
+        line-height: 1.5em;
+        font-weight: lighter;
+        font-style: italic;
+      }
+    }
+  }
+}
+
+footer {
+  background-color: map-get($color , 'primary');
+  text-align: center;
+  padding: 24px;
+  color: map-get($color , 'secondary');
+  font-weight: bold;
+  position: relative;
+  top: 59px;
+
+  p {
+    margin: 0 auto;
+  }
+}
